@@ -1,9 +1,9 @@
 <template>
   <div is="transition-group" name="fade">
-    <div v-for="({open, close, id, isOpen}, index) in hours" :key="id">
+    <div v-for="({open, close, id, isOpen, title}, index) in hours" :key="id">
       <div class="flex-table row" role="rowgroup">
         <div class="flex-row day" role="cell">
-          <div v-if="showDay(index)">{{ titleCase(day) }}</div>
+          <div v-if="showDay(index)">{{ titleCase(title?title:day) }}</div>
         </div>
         <div class="flex-row toggle" role="cell">
           <ToggleButton
